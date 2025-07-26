@@ -22,11 +22,11 @@ spec:
             - containerPort: 8000
           env: 
           - name: db_address
-            value: db
+            value: "postgres-service"
           - name: db_username
-            value: postgres 
+            value: "postgres" 
           - name: db_name
-            value: postgres
+            value: "postgres"
           - name: db_password
             valueFrom:
               secretKeyRef: 
