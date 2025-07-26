@@ -1,6 +1,6 @@
 Collaborators: 
-Aakash Jha 
-Ruchika Modgil
+- Aakash Jha 
+- Ruchika Modgil
 
 # The Rise of the Containers (semi-guided) material
 
