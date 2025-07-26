@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-api
+  name: postgres-db
   labels: 
     name: crud-app
 spec:
@@ -15,20 +15,18 @@ spec:
         name: crud-app
     spec:
       containers:
-        - name: crud-app
-          image: crud_app:latest
-          imagePullPolicy: Never
+        - name: postgres
+          image: postgres:16
           ports:
-            - containerPort: 8000
+            - containerPort: 5432
           env: 
-          - name: db_address
-            value: db
-          - name: db_username
-            value: postgres 
-          - name: db_name
+          - name: POSTGRES_DB
             value: postgres
-          - name: db_password
+          - name: POSTGRES_USER
+            value: postgres 
+          - name: POSTGRES_PASSWORD
             valueFrom:
               secretKeyRef: 
                 name: app-secret
                 key: db_password
+    
